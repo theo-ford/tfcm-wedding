@@ -76,7 +76,19 @@ const TimeLocationCon = styled.div`
   padding-top: 60vh;
   width: 100vw;
   @media (max-width: 666px) {
-    padding-top: 60vh;
+    padding-top: 55vh;
+  }
+`;
+const ProjectNumCon = styled.div`
+  grid-column: 9 / span 2;
+  margin-top: 12.5px;
+  @media (max-width: 666px) {
+    grid-column: 13 / span 4;
+    p {
+      font-size: 12px;
+      float: right;
+      letter-spacing: -0.2px;
+    }
   }
 `;
 
@@ -90,49 +102,66 @@ const ReceptionCon = styled.div`
   grid-column: span 8;
   @media (max-width: 666px) {
     grid-column: span 16;
+    padding-top: 5px;
     margin-top: 10vh;
     /* padding-top: 12.5px; */
     border-top: 0.5px solid #eaeaea;
   }
 `;
-const LoveCon = styled.div`
-  position: fixed;
-  bottom: 12.5px;
-  width: 100%;
-  @media (max-width: 666px) {
-    position: relative;
-    margin-top: 120vh;
-  }
-`;
-const LoveTextCon = styled.div`
-  grid-column: span 11;
-`;
-const CopyRightDestopCon = styled.div`
-  margin-top: 12.5px;
-  grid-column: span 4;
-  @media (max-width: 666px) {
-    display: none;
-  }
-`;
 
 const MobileFooterCon = styled.div`
-  margin-top: 60px;
+  width: 100vw;
+  margin-top: 110vh;
+
   @media (min-width: 666px) {
     display: none;
   }
 `;
+const TimeZoneCon = styled.div`
+  margin-top: 10vh;
+`;
+const ContactCon = styled.div`
+  margin-top: 6vh;
+`;
 
 const MobileFooterCol1 = styled.div`
+  padding-top: 5px;
   grid-column: span 8;
 `;
 
 const MobileFooterCol2 = styled.div`
+  padding-top: 5px;
   grid-column: span 8;
 `;
 
-const MobileCopyRightCon = styled.div`
-  @media (min-width: 666px) {
+const DesktopFooterCon = styled.div`
+  position: fixed;
+  bottom: 12.5px;
+  width: 100%;
+  @media (max-width: 666px) {
     display: none;
+  }
+`;
+const LoveTextCon = styled.div`
+  grid-column: span 8;
+  @media (max-width: 666px) {
+    grid-column: span 16;
+  }
+`;
+const ContactTextCon = styled.div`
+  grid-column: span 2;
+  padding-top: 5px;
+  @media (max-width: 666px) {
+    grid-column: span 8;
+    margin-bottom: 10vh;
+  }
+`;
+const RegistrationCon = styled.div`
+  grid-column: span 4;
+  padding-top: 5px;
+  @media (max-width: 666px) {
+    padding-top: 5px;
+    grid-column: span 16;
   }
 `;
 
@@ -148,12 +177,12 @@ const LogoCon = styled.div`
     width: 100%;
   }
   @media (max-width: 666px) {
-    grid-column: span 12;
+    grid-column: span 8;
   }
 `;
 const UKTimeCon = styled.div`
   margin-top: 12.5px;
-  grid-column: 12 / span 2;
+  grid-column: 13 / span 2;
   @media (max-width: 666px) {
     display: none;
   }
@@ -161,7 +190,7 @@ const UKTimeCon = styled.div`
 
 const LATimeCon = styled.div`
   margin-top: 12.5px;
-  grid-column: 14 / span 2;
+  grid-column: 15 / span 2;
   @media (max-width: 666px) {
     display: none;
   }
@@ -272,6 +301,9 @@ const Index = ({ data }) => {
             <LogoCon>
               <StaticImage src={"../img/TFCM Logo C.svg"} />
             </LogoCon>
+            <ProjectNumCon>
+              <Text2>TFCM&#8212;0001</Text2>
+            </ProjectNumCon>
             <UKTimeCon>
               <Text2>
                 GMT <br></br>
@@ -308,8 +340,8 @@ const Index = ({ data }) => {
           <Grid16Border>
             <InviteCopyCon>
               <Text>
-                Theo & Cat invite you to their first project together - getting
-                married.
+                Theo & Cat invite you to their first project together &#8212;
+                getting married
                 <br></br>
                 <br></br>
                 08/06/2024
@@ -322,10 +354,13 @@ const Index = ({ data }) => {
             <CermonyCon>
               <Text>
                 15:40<br></br>
-                Southwark Register Office <br></br>
-                34 Peckham Rd, London SE5 8QA<br></br>* We'll be in the Hermits
-                Cave<br></br> from 15:00 feel free to join us
+                Southwark Register Office<br></br>
+                34 Peckham Rd<br></br>
+                London SE5 8QA
               </Text>
+              {/* <Text2>
+                * We'll be in the Hermits Cave from 15:00 feel free to join us
+              </Text2> */}
             </CermonyCon>
             <ReceptionCon>
               <Text>
@@ -337,70 +372,110 @@ const Index = ({ data }) => {
             </ReceptionCon>
           </Grid16Border>
         </TimeLocationCon>
-        <LoveCon>
+        <DesktopFooterCon>
           <Grid16Border>
             <LoveTextCon>
               <Text>
                 Love<br></br>Cat & Theo
               </Text>
             </LoveTextCon>
-            <CopyRightDestopCon>
+            <ContactTextCon>
               <Text2>
-                {" "}
-                &copy; All rights reserved TFCM. <br></br>
-                TFCM-0001
+                theo.e.ford@gmail.com<br></br>
+                +44 7599 759 527
               </Text2>
-            </CopyRightDestopCon>
+            </ContactTextCon>
+            <ContactTextCon>
+              <Text2>
+                Flat 14, Cam Court<br></br>
+                Bibury Close<br></br>
+                London SE15 6AG
+              </Text2>
+            </ContactTextCon>
+            <RegistrationCon>
+              <Text2>
+                TFCM is a wedding registered in the England. Wedding No.
+                077788012. Registered office: Flat 14, Cam Court, Bibury Close,
+                SE15 6AG Vat Reg. Number: GB 821382322
+              </Text2>
+            </RegistrationCon>
           </Grid16Border>
-        </LoveCon>
+        </DesktopFooterCon>
+
         <MobileFooterCon>
           <Grid16Border>
-            <MobileFooterCol1>
+            <LoveTextCon>
+              <Text>
+                Love<br></br>Cat & Theo
+              </Text>
+            </LoveTextCon>
+          </Grid16Border>
+          <TimeZoneCon>
+            <Grid16Border>
+              <MobileFooterCol1>
+                <Text2>
+                  GMT <br></br>
+                  {gmtDate}
+                  <br></br>
+                  {gmtTime}
+                  <br></br>
+                  <br></br>
+                  EST<br></br>
+                  {estDate}
+                  <br></br>
+                  {estTime}
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                </Text2>
+              </MobileFooterCol1>
+              <MobileFooterCol2>
+                <Text2>
+                  PST <br></br>
+                  {laDate}
+                  <br></br>
+                  {laTime}
+                  <br></br>
+                  <br></br>
+                  IST <br></br>
+                  {istDate}
+                  <br></br>
+                  {istTime}
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                </Text2>
+              </MobileFooterCol2>
+            </Grid16Border>
+          </TimeZoneCon>
+          <ContactCon>
+            <Grid16Border>
+              <ContactTextCon>
+                <Text2>
+                  theo.e.ford@gmail.com<br></br>
+                  +44 7599 759 527
+                </Text2>
+              </ContactTextCon>
+              <ContactTextCon>
+                <Text2>
+                  Flat 14, Cam Court<br></br>
+                  Bibury Close<br></br>
+                  London SE15 6AG
+                </Text2>
+              </ContactTextCon>
+            </Grid16Border>
+          </ContactCon>
+
+          <Grid16Border>
+            <RegistrationCon>
               <Text2>
-                GMT <br></br>
-                {gmtDate}
-                <br></br>
-                {gmtTime}
-                <br></br>
-                <br></br>
-                EST<br></br>
-                {estDate}
-                <br></br>
-                {estTime}
-                <br></br>
-                <br></br>
-                <br></br>
+                TFCM is a wedding registered in the England. Wedding No.
+                077788012. Registered office: Flat 14, Cam Court, Bibury Close,
+                SE15 6AG Vat Reg. Number: GB 821382322
               </Text2>
-            </MobileFooterCol1>
-            <MobileFooterCol2>
-              <Text2>
-                PST <br></br>
-                {laDate}
-                <br></br>
-                {laTime}
-                <br></br>
-                <br></br>
-                IST <br></br>
-                {istDate}
-                <br></br>
-                {istTime}
-                <br></br>
-                <br></br>
-                <br></br>
-              </Text2>
-            </MobileFooterCol2>
+            </RegistrationCon>
           </Grid16Border>
         </MobileFooterCon>
-        <MobileCopyRightCon>
-          <Grid16Border>
-            <MobileFooterCol1>
-              <Text2>TFCM-0001</Text2>
-            </MobileFooterCol1>
-            <MobileFooterCol2>
-              <Text2>&copy; All rights reserved TFCM.</Text2>
-            </MobileFooterCol2>
-          </Grid16Border>
-        </MobileCopyRightCon>
       </PageCon>
     </>
   );
