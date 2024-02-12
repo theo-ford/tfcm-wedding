@@ -57,6 +57,7 @@ const LogoConCon = styled.div`
   position: absolute;
   @media (max-width: 666px) {
     /* margin-top: 10px; */
+    position: fixed;
   }
 `;
 
