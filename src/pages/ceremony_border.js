@@ -471,7 +471,7 @@ const Index = ({ data }) => {
           <Grid16Border>
             <RegistrationCon>
               <Text2>
-                TFCM is a wedding registered in the England. Wedding No.
+                TFCM is a company registered in the England. Company No.
                 077788012. Registered office: Flat 14, Cam Court, Bibury Close,
                 SE15 6AG Vat Reg. Number: GB 821382322
               </Text2>
