@@ -82,6 +82,7 @@ const TimeLocationCon = styled.div`
 const ProjectNumCon = styled.div`
   grid-column: 9 / span 2;
   margin-top: 12.5px;
+  display: none;
   @media (max-width: 666px) {
     grid-column: 13 / span 4;
     p {
@@ -365,7 +366,7 @@ const Index = ({ data }) => {
             <ReceptionCon>
               <Text>
                 17:00<br></br>
-                Camberweel Arms <br></br>
+                Camberwell Arms <br></br>
                 65 Camberwell Church St<br></br>
                 London SE5 8TR
               </Text>
@@ -394,7 +395,7 @@ const Index = ({ data }) => {
             </ContactTextCon>
             <RegistrationCon>
               <Text2>
-                TFCM is a wedding registered in the England. Wedding No.
+                TFCM is a company registered in the England. Company No.
                 077788012. Registered office: Flat 14, Cam Court, Bibury Close,
                 SE15 6AG Vat Reg. Number: GB 821382322
               </Text2>
