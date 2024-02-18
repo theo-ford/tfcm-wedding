@@ -42,7 +42,7 @@ const Grid16Border = styled.div`
   grid-row-gap: 0;
   width: calc(100% - 25px);
   z-index: 20000;
-  border-top: 0.5px solid #eaeaea;
+  border-top: 0.5px solid #e4e3e3;
   padding-top: 1.5px;
   @media (max-width: 666px) {
     width: calc(100% - 20px);
@@ -107,7 +107,7 @@ const ReceptionCon = styled.div`
     padding-top: 5px;
     margin-top: 10vh;
     /* padding-top: 12.5px; */
-    border-top: 0.5px solid #eaeaea;
+    border-top: 0.5px solid #e4e3e3;
   }
 `;
 
@@ -170,8 +170,8 @@ const RegistrationCon = styled.div`
 /* - - - - - - CONTENT - - - - - */
 const LogoCon = styled.div`
   padding-top: 12.5px;
-  grid-column: span 7;
-  opacity: 0.6;
+  grid-column: span 5;
+  opacity: 0.7;
   /* background-color: red; */
   width: calc(100%);
   /* height: 200px; */
@@ -184,7 +184,14 @@ const LogoCon = styled.div`
 `;
 const UKTimeCon = styled.div`
   margin-top: 12.5px;
-  grid-column: 13 / span 2;
+  grid-column: 9 / span 2;
+  @media (max-width: 666px) {
+    display: none;
+  }
+`;
+const NYTimeCon = styled.div`
+  margin-top: 12.5px;
+  grid-column: 11 / span 2;
   @media (max-width: 666px) {
     display: none;
   }
@@ -192,40 +199,48 @@ const UKTimeCon = styled.div`
 
 const LATimeCon = styled.div`
   margin-top: 12.5px;
+  grid-column: 13 / span 2;
+  @media (max-width: 666px) {
+    display: none;
+  }
+`;
+const INTimeCon = styled.div`
+  margin-top: 12.5px;
   grid-column: 15 / span 2;
   @media (max-width: 666px) {
     display: none;
   }
 `;
+
 const SecondDate = styled.div`
   padding-top: 1.5vh;
 `;
 
 const Text = styled.p`
-  font-family: "HelveticaNowText";
+  font-family: "HelveticaNowText", helvetica;
   font-size: 36px;
-  font-weight: bold;
+  font-weight: 500;
   margin: 0;
   padding: 0;
   line-height: 110%;
   letter-spacing: -1.7px;
   color: #e0e0e0;
-  opacity: 0.6;
+  opacity: 0.7;
   @media (max-width: 666px) {
     font-size: 24px;
   }
 `;
 
 const Text2 = styled.p`
-  font-family: "HelveticaNowText";
+  font-family: "HelveticaNowText", helvetica;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 500;
   margin: 0;
   padding: 0;
   line-height: 110%;
   letter-spacing: -1.2px;
   color: #e0e0e0;
-  opacity: 0.6;
+  opacity: 0.7;
   @media (max-width: 666px) {
     font-size: 16px;
   }
@@ -243,7 +258,7 @@ const Index = ({ data }) => {
     .toFormat("y'/'LL'/'dd");
   var laTime = DateTime.now()
     .setZone("America/Los_Angeles")
-    .toFormat("HH':'mm':'ss");
+    .toFormat("HH':'mm'");
 
   var gmt = DateTime.now()
     .setZone("Europe/London")
@@ -255,7 +270,7 @@ const Index = ({ data }) => {
 
   var gmtTime = DateTime.now()
     .setZone("Europe/London")
-    .toFormat("HH':'mm':'ss");
+    .toFormat("HH':'mm'");
 
   var est = DateTime.now()
     .setZone("America/New_York")
@@ -267,7 +282,7 @@ const Index = ({ data }) => {
 
   var estTime = DateTime.now()
     .setZone("America/New_York")
-    .toFormat("HH':'mm':'ss");
+    .toFormat("HH':'mm'");
 
   var ist = DateTime.now()
     .plus({ hours: 5, minutes: 20 })
@@ -280,7 +295,7 @@ const Index = ({ data }) => {
 
   var istTime = DateTime.now()
     .plus({ hours: 5, minutes: 20 })
-    .toFormat("HH':'mm':'ss");
+    .toFormat("HH':'mm'");
 
   function date() {}
 
@@ -308,33 +323,36 @@ const Index = ({ data }) => {
             </ProjectNumCon>
             <UKTimeCon>
               <Text2>
-                GMT <br></br>
+                GMT<br></br>
                 {gmtDate}
                 <br></br>
                 {gmtTime}
-                <br></br>
-                <SecondDate>
-                  EST<br></br>
-                  {estDate}
-                  <br></br>
-                  {estTime}
-                </SecondDate>
               </Text2>
             </UKTimeCon>
+            <NYTimeCon>
+              <Text2>
+                EST<br></br>
+                {estDate}
+                <br></br>
+                {estTime}
+              </Text2>
+            </NYTimeCon>
             <LATimeCon>
               <Text2>
                 PST <br></br>
                 {laDate}
                 <br></br>
                 {laTime}
-                <SecondDate>
-                  IST <br></br>
-                  {istDate}
-                  <br></br>
-                  {istTime}
-                </SecondDate>
               </Text2>
             </LATimeCon>
+            <INTimeCon>
+              <Text2>
+                IST <br></br>
+                {istDate}
+                <br></br>
+                {istTime}
+              </Text2>
+            </INTimeCon>
           </Grid16>
         </LogoConCon>
 
@@ -356,6 +374,7 @@ const Index = ({ data }) => {
             <CermonyCon>
               <Text>
                 15:40<br></br>
+                The Garden Room<br></br>
                 Southwark Register Office<br></br>
                 34 Peckham Rd<br></br>
                 London SE5 8QA
@@ -383,8 +402,8 @@ const Index = ({ data }) => {
             </LoveTextCon>
             <ContactTextCon>
               <Text2>
-                theo.e.ford@gmail.com<br></br>
-                +44 7599 759 527
+                cat.mollett@gmail.com<br></br>
+                +44 7956 872 622
               </Text2>
             </ContactTextCon>
             <ContactTextCon>
