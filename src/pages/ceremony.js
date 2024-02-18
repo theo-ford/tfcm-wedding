@@ -170,7 +170,7 @@ const RegistrationCon = styled.div`
 /* - - - - - - CONTENT - - - - - */
 const LogoCon = styled.div`
   padding-top: 12.5px;
-  grid-column: span 4;
+  grid-column: span 5;
   opacity: 0.7;
   /* background-color: red; */
   width: calc(100%);
